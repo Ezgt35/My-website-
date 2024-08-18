@@ -5,7 +5,7 @@
       "destination": "/404.html"
     }
   ],
-  "trailingSlash": false
+  "trailingSlash": false,
   "redirects": [
     {
       "source": "/page",
