@@ -8,8 +8,8 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/page",
-      "destination": "/actual-file-name",
+      "source": "/Linktree",
+      "destination": "/Linktree.html",
       "permanent": true
     }
   ]
