@@ -7,3 +7,13 @@
   ],
   "trailingSlash": false
 }
+
+{
+  "redirects": [
+    {
+      "source": "/page",
+      "destination": "/actual-file-name",
+      "permanent": true
+    }
+  ]
+}
