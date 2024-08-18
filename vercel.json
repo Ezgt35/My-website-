@@ -6,9 +6,6 @@
     }
   ],
   "trailingSlash": false
-}
-
-{
   "redirects": [
     {
       "source": "/page",
