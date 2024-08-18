@@ -5,8 +5,8 @@
       "destination": "/404.html"
     },
     {
-      "source": "/linktree",
-      "destination": "/Linktree.html"
+      "source": "/Script",
+      "destination": "/linktree.html"
     }
   ],
   "trailingSlash": false,
