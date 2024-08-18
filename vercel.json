@@ -3,13 +3,17 @@
     {
       "source": "/404",
       "destination": "/404.html"
+    },
+    {
+      "source": "/linktree",
+      "destination": "/Linktree.html"
     }
   ],
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/Linktree",
-      "destination": "/Linktree.html",
+      "source": "/page",
+      "destination": "/actual-file-name",
       "permanent": true
     }
   ]
