@@ -20,8 +20,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-end; /* Ubah menjadi flex-end */
-            padding-bottom: 20px; /* Tambahkan padding-bottom */
+            justify-content: center; /* Ubah menjadi center untuk menempatkan elemen di tengah */
+            padding: 20px; /* Tambahkan padding */
         }
         .image-background {
             position: absolute;
@@ -29,7 +29,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            background-image: url('https://telegra.ph/file/c72ff41b27b62351e87c6.jpg');
+            background-size: cover;
+            background-position: center;
             z-index: -1;
         }
         .message {
@@ -53,7 +55,7 @@
 </head>
 <body>
    <div class="container">
-        <img src="glitch-error-404.jpg" alt="Error Background" class="image-background">
+        <div class="image-background"></div>
         <div class="message">404 Not Found</div>
         <a href="index.html" class="button">Back to Home</a>
     </div>
