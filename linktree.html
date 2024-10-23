@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('https://telegra.ph/file/f09e4b853b9b9cb3502d9.jpg'); /* Ganti dengan link image yang kamu inginkan */
+            background-image: url('https://telegra.ph/file/f09e4b853b9b9cb3502d9.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -18,68 +18,261 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden; /* Prevents body from scrolling */
+            overflow: hidden;
+            animation: fadeIn 1.5s ease-in-out;
         }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
         .container {
             text-align: center;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             padding: 20px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            max-height: 80vh; /* Limits container height */
-            overflow-y: auto; /* Makes the container scrollable if content overflows */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-height: 80vh;
+            overflow-y: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
+        .container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
         .profile-pic {
             width: 100px;
             height: 100px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease;
         }
+
+        .profile-pic:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
         h1 {
             font-size: 24px;
             margin-bottom: 10px;
             color: #333;
-        }
+        }        
+
         p {
             font-size: 14px;
             color: #777;
             margin-bottom: 20px;
         }
+
         .links {
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
+
         .link {
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 12px 25px;
             border-radius: 50px;
             font-size: 16px;
             font-weight: bold;
             color: white;
-            background-color: black;
-            transition: background-color 0.3s ease;
+            background-color: #333;
+            transition: background-color 0.3s ease, transform 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
         }
+
+        .link::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease;
+            transform: scaleX(0);
+            transform-origin: left;
+            z-index: 0;
+        }
+
+        .link:hover::before {
+            transform: scaleX(1);
+        }
+
         .link i {
             margin-right: 10px;
+            z-index: 1;
         }
+
         .link:hover {
             background-color: #0056b3;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .link span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Styling untuk Hubungi Kami */
+        .contact-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #007bff;
+            color: white;
+            padding: 12px;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .contact-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+       /* Styling pop-up */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.popup.show {
+    display: block;
+    animation: popupFadeIn 0.4s forwards ease-in-out;
+}
+
+@keyframes popupFadeIn {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+.popup h2 {
+    margin-top: 0;
+}
+
+.popup a {
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.popup a:hover {
+    background-color: #0056b3;
+}
+
+/* Styling overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.show {
+    display: block;
+    animation: overlayFadeIn 0.4s forwards ease-in-out;
+}
+
+@keyframes overlayFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+       /* Styling untuk tombol kembali */
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+            border-radius: 50%;
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            background-color: #f0f0f0;
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
 <body>
+    <button class="back-button" onclick="window.location.href='index.html'">
+    <i class="fas fa-arrow-left"></i>
+</button>
     <div class="container">
         <img src="https://telegra.ph/file/4c024d82f89dc9d46fed6.jpg" alt="Profile Picture" class="profile-pic">
-        <h1>Link Tree By Ezgt</h1>
+        <h1>Bot Script Collection By Ezgt</h1>
         <p>Kumpulan Link Script Bot WhatsApp</p>
         <div class="links">
             <a href="https://www.mediafire.com/file/q9r2r2qosibeoa6/Not+RezzX+V8+[+ORI+].zip/file" class="link" target="_blank">
-                <i class="fas fa-file-zipper"></i>Not RezzX V8 [ORI]
+                <i class="fas fa-file-zipper"></i><span>Not RezzX V8 [ORI]</span>
             </a>
             <a href="https://www.mediafire.com/file/vh9rb658lybgtol/HanmodCipok_Versi_2.0_%25F0%259F%2594%25A5.7z/file" class="link" target="_blank">
                 <i class="fas fa-file-zipper"></i>HanmodCipok_Versi_2
@@ -111,9 +304,31 @@
             <a href="https://www.mediafire.com/file/hn9fdpmdfm91dca/STORE_DYCAL_V1.zip/file" class="link" target="_blank">
               <i class="fas fa-file-zipper"></i>Store_Dycal_V1
             </a>
-            Jika Link Tidak Berfungsi/Error <br> Silahkan Hubungi Owner Di Bawah Ini
-            <a href="mailto:bangezgt@gmail.com">Email</a> atau <a href="https://wa.me/6288802747938">WhatsApp</a>.</p>
+            <!-- Link yang namanya "nama" telah dihapus -->
         </div>
     </div>
+
+    <a href="#" class="contact-button" onclick="togglePopup()">
+        <i class="fas fa-comments"></i>
+    </a>
+
+    <div class="overlay" id="overlay" onclick="togglePopup()"></div>
+
+<div class="popup" id="popup">
+    <h2>Hubungi Kami</h2>
+    <p>Jika ada masalah dengan link, silakan hubungi kami melalui:</p>
+    <a href="https://wa.me/6288802747938/?text=*Formulir%20Laporan%20Masalah%20Website*%0A%0AHalo%20Pengembang,%0ASaya%20menemukan%20masalah%20pada%20website%20Anda.%0A%0ADeskripsi%20Masalah:%0ATanggal%20Laporan:%0ANama%20Pengirim:%0ATangkapan%20Layar%20(Opsional):%0ACatatan%20Tambahan%20(Opsional):" target="_blank">WhatsApp</a>
+    <a href="mailto:bangezgt@gmail.com">Email</a>
+    <a onclick="togglePopup()">Tutup</a>
+</div>
+
+<script>
+    function togglePopup() {
+        const popup = document.getElementById('popup');
+        const overlay = document.getElementById('overlay');
+        popup.classList.toggle('show');
+        overlay.classList.toggle('show');
+    }
+</script>
 </body>
-</html>
+            </html>
