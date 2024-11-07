@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Video/MP3 Downloader</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>YouTube Downloader</h1>
+    <form action="/download" method="get">
+      <label for="url">Enter YouTube URL:</label>
+      <input type="text" id="url" name="url" placeholder="https://www.youtube.com/watch?v=..." required>
+      <div>
+        <label for="format">Choose Format:</label>
+        <select name="format" id="format">
+          <option value="mp4">Video (.mp4)</option>
+          <option value="mp3">Audio (.mp3)</option>
+        </select>
+      </div>
+      <button type="submit">Download</button>
+    </form>
+  </div>
+</body>
+</html>
