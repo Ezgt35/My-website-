@@ -1,20 +1,8 @@
 {
   "rewrites": [
-    {
-      "source": "/404",
-      "destination": "/404.html"
-    },
-    {
-      "source": "/Script",
-      "destination": "/linktree.html"
-    }
+    { "source": "/404", "destination": "/404.html" },
+    { "source": "/Script", "destination": "/linktree.html" },
+    { "source": "/:path", "destination": "/:path.html" }
   ],
-  "trailingSlash": false,
-  "redirects": [
-    {
-      "source": "/page",
-      "destination": "/actual-file-name",
-      "permanent": true
-    }
-  ]
+  "trailingSlash": false
 }
