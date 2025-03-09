@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel Petrodactyle</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style>
+    body {
+      background: #eef2f3;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .header {
+      background: linear-gradient(135deg, #1d2b64, #f8cdda);
+      color: #fff;
+      padding: 60px 0;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .header h1 {
+      font-size: 3rem;
+      font-weight: 600;
+    }
+    .header p {
+      font-size: 1.2rem;
+    }
+    .card {
+      border: none;
+      border-radius: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .cpu {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 15px;
+    }
+    .price {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #e63946;
+      margin-bottom: 20px;
+    }
+    .btn-primary {
+      background: linear-gradient(45deg, #1d2b64, #f8cdda);
+      border: none;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(45deg, #162a4e, #e0a8b0);
+      transform: scale(1.05);
+    }
+    .btn-success {
+      background: #28a745;
+      border: none;
+      transition: background 0.3s;
+    }
+    .btn-success:hover {
+      background: #218838;
+    }
+    footer {
+      background: #1d2b64;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 60px;
+    }
+    /* Swiper custom styles */
+    .swiper {
+      padding: 20px 0;
+    }
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+    }
+    /* Extra layanan section */
+    .extras-section {
+      background: #fff;
+      padding: 40px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 60px;
+    }
+    .extras-section h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    /* Total biaya tampil di bawah daftar layanan dan di atas tombol Pesan tanpa background */
+    #totalCost {
+      font-size: 1.25rem;
+      font-weight: 600;
+      text-align: left;
+      margin-bottom: 20px;
+      color: #FF8C00;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header animate__animated animate__fadeInDown">
+    <div class="container">
+      <h1>Ez-Hosting⚡</h1>
+      <p>Ez-Hostin Menyediakan Panel Petrodactyle, Script Bot Dan Jasa</p>
+    </div>
+  </header>
+
+  <!-- Slider Produk -->
+  <div class="container">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <!-- Slide 1: Produk 1 -->
+        <div class="swiper-slide">
+          <div class="card shadow-sm animate__animated animate__fadeInUp" style="width: 18rem;">
+            <div class="card-body text-center">
+              <h5 class="card-title">⚡ Ram 1</h5>
+              <p class="cpu">Cpu 30%</p>
+              <p class="price">Rp1,500</p>
+              <a href="https://wa.me/6288802747938?text=Halo%2C%20saya%20ingin%20memesan%20produk%3A%20%E2%9A%A1%20Ram%201%20-%20Cpu%2030%25%20-%20Harga%3A%20Rp1,500" 
+                 class="btn btn-primary" target="_blank">Beli Sekarang</a>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 2: Produk 2 -->
+        <div class="swiper-slide">
+          <div class="card shadow-sm animate__animated animate__fadeInUp" style="width: 18rem;">
+            <div class="card-body text-center">
+              <h5 class="card-title">⚡ Ram 2</h5>
+              <p class="cpu">Cpu 60%</p>
+              <p class="price">Rp2,000</p>
+              <a href="https://wa.me/6288802747938?text=Halo%2C%20saya%20ingin%20memesan%20produk%3A%20%E2%9A%A1%20Ram%202%20-%20Cpu%2060%25%20-%20Harga%3A%20Rp2,000" 
+                 class="btn btn-primary" target="_blank">Beli Sekarang</a>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 3: Produk 3 -->
+        <div class="swiper-slide">
+          <div class="card shadow-sm animate__animated animate__fadeInUp" style="width: 18rem;">
+            <div class="card-body text-center">
+              <h5 class="card-title">⚡ Ram 3</h5>
+              <p class="cpu">Cpu 80%</p>
+              <p class="price">Rp3,000</p>
+              <a href="https://wa.me/6288802747938?text=Halo%2C%20saya%20ingin%20memesan%20produk%3A%20%E2%9A%A1%20Ram%203%20-%20Cpu%2080%25%20-%20Harga%3A%20Rp3,000" 
+                 class="btn btn-primary" target="_blank">Beli Sekarang</a>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 4: Produk 4 -->
+        <div class="swiper-slide">
+          <div class="card shadow-sm animate__animated animate__fadeInUp" style="width: 18rem;">
+            <div class="card-body text-center">
+              <h5 class="card-title">⚡ Ram 4</h5>
+              <p class="cpu">Cpu 100%</p>
+              <p class="price">Rp4,000</p>
+              <a href="https://wa.me/6288802747938?text=Halo%2C%20saya%20ingin%20memesan%20produk%3A%20%E2%9A%A1%20Ram%204%20-%20Cpu%20100%25%20-%20Harga%3A%20Rp4,000" 
+                 class="btn btn-primary" target="_blank">Beli Sekarang</a>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 5: Produk 5 -->
+        <div class="swiper-slide">
+          <div class="card shadow-sm animate__animated animate__fadeInUp" style="width: 18rem;">
+            <div class="card-body text-center">
+              <h5 class="card-title">⚡ Ram 5</h5>
+              <p class="cpu">Cpu 120%</p>
+              <p class="price">Rp5,000</p>
+              <a href="https://wa.me/6288802747938?text=Halo%2C%20saya%20ingin%20memesan%20produk%3A%20%E2%9A%A1%20Ram%205%20-%20Cpu%20120%25%20-%20Harga%3A%20Rp5,000" 
+                 class="btn btn-primary" target="_blank">Beli Sekarang</a>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 6: Produk 6 -->
+        <div class="swiper-slide">
+          <div class="card shadow-sm animate__animated animate__fadeInUp" style="width: 18rem;">
+            <div class="card-body text-center">
+              <h5 class="card-title">⚡ Ram 6</h5>
+              <p class="cpu">Cpu 140%</p>
+              <p class="price">Rp6,000</p>
+              <a href="https://wa.me/6288802747938?text=Halo%2C%20saya%20ingin%20memesan%20produk%3A%20%E2%9A%A1%20Ram%206%20-%20Cpu%20140%25%20-%20Harga%3A%20Rp6,000" 
+                 class="btn btn-primary" target="_blank">Beli Sekarang</a>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 7: Produk 7 -->
+        <div class="swiper-slide">
+          <div class="card shadow-sm animate__animated animate__fadeInUp" style="width: 18rem;">
+            <div class="card-body text-center">
+              <h5 class="card-title">⚡ Ram 7</h5>
+              <p class="cpu">Cpu 160%</p>
+              <p class="price">Rp7,000</p>
+              <a href="https://wa.me/6288802747938?text=Halo%2C%20saya%20ingin%20memesan%20produk%3A%20%E2%9A%A1%20Ram%207%20-%20Cpu%20160%25%20-%20Harga%3A%20Rp7,000" 
+                 class="btn btn-primary" target="_blank">Beli Sekarang</a>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 8: Produk 8 -->
+        <div class="swiper-slide">
+          <div class="card shadow-sm animate__animated animate__fadeInUp" style="width: 18rem;">
+            <div class="card-body text-center">
+              <h5 class="card-title">⚡ Ram 8</h5>
+              <p class="cpu">Cpu 180%</p>
+              <p class="price">Rp8,000</p>
+              <a href="https://wa.me/6288802747938?text=Halo%2C%20saya%20ingin%20memesan%20produk%3A%20%E2%9A%A1%20Ram%208%20-%20Cpu%20180%25%20-%20Harga%3A%20Rp8,000" 
+                 class="btn btn-primary" target="_blank">Beli Sekarang</a>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 9: Produk 9 -->
+        <div class="swiper-slide">
+          <div class="card shadow-sm animate__animated animate__fadeInUp" style="width: 18rem;">
+            <div class="card-body text-center">
+              <h5 class="card-title">⚡ Ram 9</h5>
+              <p class="cpu">Cpu 200%</p>
+              <p class="price">Rp9,000</p>
+              <a href="https://wa.me/6288802747938?text=Halo%2C%20saya%20ingin%20memesan%20produk%3A%20%E2%9A%A1%20Ram%209%20-%20Cpu%20200%25%20-%20Harga%3A%20Rp9,000" 
+                 class="btn btn-primary" target="_blank">Beli Sekarang</a>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 10: Produk Ram Unlimited -->
+        <div class="swiper-slide">
+          <div class="card shadow-sm animate__animated animate__fadeInUp" style="width: 18rem;">
+            <div class="card-body text-center">
+              <h5 class="card-title">⚡ Ram Unlimited</h5>
+              <p class="cpu">Tanpa Batas CPU</p>
+              <p class="price">Rp10,000</p>
+              <a href="https://wa.me/6288802747938?text=Halo%2C%20saya%20ingin%20memesan%20produk%3A%20%E2%9A%A1%20Ram%20Unlimited%20-%20Tanpa%20Batas%20CPU%20-%20Harga%3A%20Rp10,000" 
+                 class="btn btn-primary" target="_blank">Beli Sekarang</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Swiper Pagination & Navigation -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+
+  <!-- Section Ekstra Layanan -->
+  <div class="container my-5">
+    <div class="extras-section">
+      <h2>Open Jasa</h2>
+      <form id="extrasForm">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input extra-service" id="installPanel" data-price="5000" value="Install Panel">
+          <label class="form-check-label" for="installPanel">Install Panel</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input extra-service" id="installWings" data-price="5000" value="Install Wings">
+          <label class="form-check-label" for="installWings">Install Wings</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input extra-service" id="installPanelSiapPakai" data-price="10000" value="Install Panel Siap Pakai (Free egg)">
+          <label class="form-check-label" for="installPanelSiapPakai">Install Panel Siap Pakai (Free egg)</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input extra-service" id="domain" data-price="3000" value="Domain (ezgt.my.id)">
+          <label class="form-check-label" for="domain">Domain (ezgt.my.id)</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input extra-service" id="installThemaStellar" data-price="6000" value="Install Thema Stellar">
+          <label class="form-check-label" for="installThemaStellar">Install Thema Stellar</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input extra-service" id="ScCpanel" data-price="15000" value="Sc Cpanel (No Update))">
+          <label class="form-check-label" for="installThemaStellar">Sc Cpanel (No Update)</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input extra-service" id="ScCpanel" data-price="20000" value="Sc Cpanel (Full Update)">
+          <label class="form-check-label" for="installThemaStellar">Sc Cpanel (Full Update)</label>
+        </div>
+        <!-- Total biaya tampil di bawah daftar layanan dan di atas tombol Pesan -->
+        <div id="totalCost">Total: Rp0</div>
+        <button type="button" id="orderExtras" class="btn btn-success mt-3">Pesan</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p class="mb-0">&copy; 2025 Ez-Hosting. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    // Inisialisasi Swiper
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        }
+      }
+    });
+    
+    // Fungsi untuk menghitung total biaya layanan ekstra
+    function updateTotalCost() {
+      let total = 0;
+      document.querySelectorAll(".extra-service:checked").forEach(function(checkbox) {
+        total += parseInt(checkbox.getAttribute("data-price"));
+      });
+      var formattedTotal = total.toLocaleString('en-US');
+      document.getElementById("totalCost").textContent = "Total: Rp" + formattedTotal;
+    }
+    
+    // Update total saat checkbox berubah
+    document.querySelectorAll(".extra-service").forEach(function(checkbox) {
+      checkbox.addEventListener("change", updateTotalCost);
+    });
+    
+    // Fungsi untuk memproses pemesanan layanan ekstra
+    document.getElementById("orderExtras").addEventListener("click", function(){
+      var selectedExtras = [];
+      document.querySelectorAll("#extrasForm input[type='checkbox']:checked").forEach(function(checkbox){
+        selectedExtras.push(checkbox.value);
+      });
+      if(selectedExtras.length === 0){
+        alert("Silakan pilih minimal satu layanan!");
+        return;
+      }
+      // Mengambil total biaya dari elemen yang sudah terupdate
+      var totalCostText = document.getElementById("totalCost").textContent;
+      var message = "Halo, saya ingin memesan layanan tambahan:%0A" + 
+                    selectedExtras.map(function(item){ return "- " + item; }).join("%0A") +
+                    "%0A" + totalCostText;
+      var whatsappUrl = "https://wa.me/6288802747938?text=" + message;
+      window.open(whatsappUrl, "_blank");
+    });
+  </script>
+</body>
+</html>
