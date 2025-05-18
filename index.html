@@ -162,9 +162,60 @@
         font-size: 2.4rem;
       }
     }
+  #typingOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    font-size: 2rem;
+    z-index: 9999;
+  }
+
+  #typingText::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
   </style>
 </head>
 <body>
+  <div id="typingOverlay">
+  <div id="typingText"></div>
+</div>
+  <script>
+  const message = "Everything is done!";
+  const typingText = document.getElementById("typingText");
+  let index = 0;
+
+  function typeWriter() {
+    if (index < message.length) {
+      typingText.innerHTML += message.charAt(index);
+      index++;
+      setTimeout(typeWriter, 100);
+    } else {
+      // Setelah selesai mengetik, paksa pengguna keluar (misalnya ke halaman lain atau kosong)
+      setTimeout(() => {
+        window.location.href = "about:blank";
+      }, 1000);
+    }
+  }
+
+  // Jalankan efek ketika halaman dimuat
+  window.onload = function() {
+    typeWriter();
+  };
+</script>
   <div id="effetsalju"></div>
   <main>
     <div class="container shadow">
